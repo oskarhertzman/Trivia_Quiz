@@ -1,0 +1,148 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #5bbab7;
+
+}
+
+#creator {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 20px;
+}
+#pageTitle {
+  font-size: 50px;
+  display: flex;
+  position: absolute;
+  justify-content: flex-start;
+  color: white;
+  top: 0;
+  margin-top: -100px;
+}
+
+#questionBox {
+  display: flex;
+  position: relative;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 130px;
+  width: 1000px;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#questionBox:before {
+  content: '';
+   position: absolute;
+   top: 0; left: 0;
+   border-top: 80px solid #5bbab7;
+   border-right: 80px solid white;
+   width: 0;
+}
+
+
+#questionBox:after {
+  content: '';
+   position: absolute;
+   bottom: 0; right: 0;
+   border-bottom: 80px solid #5bbab7;
+   border-left: 80px solid white;
+   width: 0;
+}
+
+
+#categoryBox {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 30px;
+  width: 350px;
+  height: 40px;
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
+
+#categoryBox p  {
+  margin-left: 10px;
+}
+
+#container {
+  width: 50%;
+  margin: 0 auto;
+
+}
+
+
+
+#submit {
+  position: relative;
+  margin-top: 300px;
+  font-family: 'Montserrat', sans-serif;
+  width: 150px;
+  height: 40px;
+  background-color: #5bba6c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+#submit:before {
+   content: '';
+   position: absolute;
+   top: 0; left: 0;
+   border-top: 8px solid #5bba6c;
+   border-right: 8px solid white;
+   width: 0;
+}
+
+
+#submit:after {
+  content: '';
+   position: absolute;
+   bottom: 0; right: 0;
+   border-bottom: 10px solid #5bba6c;
+   border-left: 10px solid white;
+   width: 0;
+}
+
+
+
+#submit:hover {
+  cursor: pointer;
+}
+
+#qstError {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 150px;
+  color: #c73528;
+  font-weight: bold;
+
+
+}
+
+#feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 150px;
+  margin-right: 500px;
+  font-weight: bold;
+}
+
+#resultBox {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: -200px;
+}
+input[type= "submit"] {
+  display: block;
+  margin: 0 auto;
+}
