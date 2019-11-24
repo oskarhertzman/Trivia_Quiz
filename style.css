@@ -1,9 +1,23 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #5bbab7;
-
 }
 
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+
+#container {
+  width: 50%;
+  margin: 0 auto;
+  margin-left: 100px;
+
+}
 #creator {
   color: white;
   position: absolute;
@@ -22,6 +36,7 @@ body {
 }
 
 #questionBox {
+  animation: 2s ease-in-out 0s 1 zoom;
   display: flex;
   position: relative;
   align-content: center;
@@ -35,7 +50,7 @@ body {
 }
 
 #questionBox:before {
-  content: '';
+   content: '';
    position: absolute;
    top: 0; left: 0;
    border-top: 80px solid #5bbab7;
@@ -45,7 +60,7 @@ body {
 
 
 #questionBox:after {
-  content: '';
+   content: '';
    position: absolute;
    bottom: 0; right: 0;
    border-bottom: 80px solid #5bbab7;
@@ -72,17 +87,14 @@ body {
   margin-left: 10px;
 }
 
-#container {
-  width: 50%;
-  margin: 0 auto;
-
-}
 
 
 
 #submit {
-  position: relative;
-  margin-top: 300px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 100px;
   font-family: 'Montserrat', sans-serif;
   width: 150px;
   height: 40px;
@@ -96,8 +108,8 @@ body {
    content: '';
    position: absolute;
    top: 0; left: 0;
-   border-top: 8px solid #5bba6c;
-   border-right: 8px solid white;
+   border-top: 12px solid white;
+   border-right: 12px solid #5bba6c;
    width: 0;
 }
 
@@ -106,8 +118,8 @@ body {
   content: '';
    position: absolute;
    bottom: 0; right: 0;
-   border-bottom: 10px solid #5bba6c;
-   border-left: 10px solid white;
+   border-bottom: 12px solid white;
+   border-left: 12px solid #5bba6c;
    width: 0;
 }
 
@@ -138,11 +150,8 @@ body {
 }
 
 #resultBox {
+  font-size: 25px;
   text-align: center;
   margin: 0 auto;
-  margin-top: -200px;
-}
-input[type= "submit"] {
-  display: block;
-  margin: 0 auto;
+  margin-top: -100px
 }

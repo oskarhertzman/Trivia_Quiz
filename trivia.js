@@ -22,7 +22,6 @@ questionBox.appendChild(pageTitle);
 creator.appendChild(dbLink);
 
 function data () {
-  console.log(JSON.parse(this.responseText));
   let trivia = JSON.parse(this.responseText);
   console.log(trivia.results);
   page();
@@ -40,12 +39,14 @@ function data () {
     let difficulty = qst.difficulty;
     let type = qst.type;
     let answers = [];
+
     let qstError = document.createElement("p");
     questionBox.appendChild(qstError);
 
-    let submit = document.createElement('input');
+    let submit = document.createElement('button');
     submit.type = "submit";
     submit.id = "submit";
+    submit.textContent = "Submit";
 
 
 
@@ -77,7 +78,7 @@ function data () {
       answers[ctr] = answers[index];
       answers[index] = temp;
     }
-    console.log(answers);
+
 
 
     let qContainer = document.createElement('div');
@@ -142,27 +143,26 @@ function data () {
 
 
         let radioCheck = document.querySelector('input[type=radio]:checked + label');
-        console.log(radioCheck);
-        if (radioCheck.innerHTML === qst.correct_answer && pageN < (trivia.results.length - 1)) {
-          console.log("correct");
+        if (radioCheck.innerHTML === qst.correct_answer && pageN < (trivia.results.length)) {
           score++;
+          console.log("Correct");
           feedback.textContent = "Correct!"
           feedback.style = "color: #35c728;"
-          questionBox.appendChild(feedback);
-        }
 
-        else if (pageN < (trivia.results.length - 1)){
-          console.log("incorrect");
+        }
+        else if (pageN < (trivia.results.length)){
+          console.log("Incorrect");
           feedback.textContent = "Incorrect!"
           feedback.style = "color: #c73528;"
-          questionBox.appendChild(feedback);
         }
 
+
+        if (pageN < trivia.results.length - 1) {
+        questionBox.appendChild(feedback);
         setTimeout(function(){
           questionBox.removeChild(feedback);
         }, 2000);
-
-        console.log($('input[type=radio]:checked'));
+      }
         questionBox.removeChild(container);
         questionBox.removeChild(submit);
         questionBox.removeChild(qstError);
@@ -190,7 +190,10 @@ function results () {
   resultBox.appendChild(resultMsg);
 }
 
-let get = new XMLHttpRequest();
-get.addEventListener("load", data);
-get.open('GET', 'https://opentdb.com/api.php?amount=10&difficulty=easy');
-get.send();
+
+setTimeout(function () {
+  let get = new XMLHttpRequest();
+  get.open('GET', 'https://opentdb.com/api.php?amount=3&difficulty=easy');
+  get.addEventListener("load", data);
+  get.send();
+}, 1500);
